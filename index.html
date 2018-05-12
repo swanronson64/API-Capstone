@@ -20,7 +20,7 @@
         <section role="region">
             <header role="contentinfo" class="headers">Convert with current exchange rates!</header>
             <div class="col-4 conversion-box">
-                <form action="#">
+                <form action="#" id="conversion-form">
                     <label class="from">Convert from
                         <select class="populated-currency-list" id="dropdown-1" name="converting-from"></select>
                     </label>
@@ -30,7 +30,7 @@
                     <label for="conversion-amount"></label>
                     <input type="number" name="amount" id="conversion-amount" placeholder="no currency symbols, ex. 23.14" min="0" max="10000000000000000000000000000000"
                         step="0.01" aria-required="true" required>
-                    <button type="button" role="button" class="convert-button">Convert!</button>
+                    <button type="submit" role="button" class="convert-button">Convert!</button>
                 </form>
                 <div class='col-12 results-box'>
                     <p class="conversion-results" aria-live="assertive"></p>
