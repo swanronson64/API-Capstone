@@ -41,7 +41,7 @@ form {
 .select2-search,
 .select2-selection,
 .select2-search__field {
-    background-color: ;
+background-color:none;
 }
 
 .select2-search__field,
@@ -130,5 +130,5 @@ input[type=number] {
     font-size: 150%;
     margin: 0 4% 0 4%;
     background-color: #8E2800;
-    opacity: 0.85;
+    opacity: 0.75;
 }
