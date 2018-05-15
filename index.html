@@ -5,7 +5,7 @@
     <title> Currency Exchange
     </title>
     <link rel='stylesheet' type='text/css' href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" src='main.js'></script>
@@ -36,8 +36,9 @@
                     </label>
                     <button type="submit" role="button" class="convert-button">Convert!</button>
                 </form>
-                <div class='col-12 results-box'>
+                <div class='col-12 results-box' aria-hidden="true" hidden>
                     <p class="conversion-results" aria-live="assertive"></p>
+                    <p class="rate-info" aria-live="assertive"></p>
                 </div>
             </div>
         </section>

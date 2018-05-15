@@ -8,7 +8,7 @@ $(document).ready(function () {
         amount = 0;
 
     /**
-     * ajax request to access all available currencies
+     * declares as variable the ajax request to access all available currencies
      */
     const symbolsCall = $.ajax({
         url: `${API_root}symbols?access_key=${access_key}`,
@@ -20,16 +20,15 @@ $(document).ready(function () {
         $('#dropdown-1').select2({
             placeholder: 'Select a currency',
             width: '75%',
-            
-            
+
+
         });
         $('#dropdown-2').select2({
             placeholder: 'Select a currency',
             width: '75%',
-            
+
         })
     }
-
 
     /**
      * accesses object of all available currencies
@@ -107,7 +106,9 @@ $(document).ready(function () {
         from = $("#dropdown-1 option:selected").val();
         to = $("#dropdown-2 option:selected").val();
         amount = $("#conversion-amount").val();
-        $(".conversion-results").html(`${amount} ${from} equals ${json.result} ${to}.`)
+        $(".conversion-results").html(`${json.result} ${to}`)
+        $(".rate-info").html(`Current Exchange Rate: 1 ${from} = ${json.info.rate} ${to}`)
+        $(".results-box").show();
     }
 
     /**

@@ -3,10 +3,15 @@
 }
 
 body {
-    font-family: 'Slabo 27px', serif;
+    background-image: url("https://images.pexels.com/photos/34204/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Hind', sans-serif;
     font-size: 110%;
-    color: #173341;
-    background-color: #D1DDBD;
+    color: #8E2600;
+    background-color: #FFF0A5;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -14,19 +19,20 @@ body {
 }
 
 form {
-    background-color: #3E6170;
-    border: 3px #3E6170 solid;
-    border-top: 10px #3E6170 solid;
+    background-color: #468966;
+    border-top: 10px #468966 solid;
+    border-bottom: 7px #468966 solid;
     margin-left: 4%;
     margin-right: 4%;
-    border-radius: 5px;
+    opacity: 0.8;
 }
 
 .main-header {
     position: static;
-    background-color: #173341;
+    background-color: #B64926;
+    opacity: 0.9;
     margin-top: 0;
-    color: #f2f2f2;
+    color: #FFF0A5;
 }
 
 /* Style DropDowns */
@@ -35,13 +41,13 @@ form {
 .select2-search,
 .select2-selection,
 .select2-search__field {
-    background-color: #f2f2f2 !important;
+    background-color: ;
 }
 
 .select2-search__field,
 .select2-selection__placeholder,
 .select2-selection__rendered {
-    color: #173341 !important;
+    color: #8E2800 !important;
 }
 
 .from,
@@ -51,63 +57,78 @@ form {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5%;
-    color: #D1DDBD;
+    color: #8E2800;
+    font-size: 120%;
 }
 
 button {
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Hind', sans-serif;
     font-size: 150%;
     border: none;
-    border-radius: 5px;
-    color: #173341;
+    color: #FFF0A5;
     display: block;
     margin: auto;
     margin-top: 4%;
     margin-bottom: 2%;
+    background: #8E2800;
+    -webkit-transition-property: background, border-radius;
+    -moz-transition-property: background, border-radius;
+    -o-transition-property: background, border-radius;
+    transition-property: background, border-radius;
+    -webkit-transition-duration: .5s;
+    -moz-transition-duration: .5;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
 }
 
-/* STYLE TEXTBOXES */
+button:hover {
+    background: #B64926;
+    color: #FFF0A5;
+}
+
+/* Style numberbox */
 
 #conversion-amount::-webkit-input-placeholder {
     /* WebKit browsers */
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Hind', sans-serif;
     font-size: 1em;
 }
 
 #conversion-amount:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Hind', sans-serif;
     font-size: 1em;
 }
 
 #conversion-amount::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Hind', sans-serif;
     font-size: 1em;
 }
 
 #conversion-amount:-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Hind', sans-serif;
     font-size: 1em;
 }
 
 input[type=number] {
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Hind', sans-serif;
     font-size: 16px;
-    color: #173341;
-    border: 2px #173341 solid;
+    color: #8E2800;
+    border: 1px #8E2800 solid;
     border-radius: 3.25px;
     width: 50%;
 }
 
-/* 
-
-color 1 dark teal #173341
-color 2 gray teal #3E6170
-color 3 light gray/blue #90A99D
-color 4 light sandstone #D1DDBD
-color 5 white gray F2F2F2
-
-
-*/
+.results-box {
+    color: #FFF0A5;
+    font-size: 150%;
+    margin: 0 4% 0 4%;
+    background-color: #8E2800;
+    opacity: 0.85;
+}
