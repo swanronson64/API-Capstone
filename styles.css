@@ -3,50 +3,111 @@
 }
 
 body {
-    font-family: 'Roboto Mono', monospace;
-    color: #00FA9A;
-    background-color: #3B3F45;
+    font-family: 'Slabo 27px', serif;
+    font-size: 110%;
+    color: #173341;
+    background-color: #D1DDBD;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    margin-top: 0;
+}
+
+form {
+    background-color: #3E6170;
+    border: 3px #3E6170 solid;
+    border-top: 10px #3E6170 solid;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 5px;
+}
+
+.main-header {
+    position: static;
+    background-color: #173341;
+    margin-top: 0;
+    color: #f2f2f2;
 }
 
 /* Style DropDowns */
 
+.select2-results__options,
+.select2-search,
+.select2-selection,
+.select2-search__field {
+    background-color: #f2f2f2 !important;
+}
+
+.select2-search__field,
+.select2-selection__placeholder,
+.select2-selection__rendered {
+    color: #173341 !important;
+}
+
 .from,
-.to {
+.to,
+.amount {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.5em;
+    margin-bottom: 5%;
+    color: #D1DDBD;
 }
 
 button {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Slabo 27px', serif;
+    font-size: 150%;
+    border: none;
+    border-radius: 5px;
+    color: #173341;
+    display: block;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 2%;
 }
 
 /* STYLE TEXTBOXES */
 
 #conversion-amount::-webkit-input-placeholder {
     /* WebKit browsers */
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Slabo 27px', serif;
     font-size: 1em;
 }
 
 #conversion-amount:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Slabo 27px', serif;
     font-size: 1em;
 }
 
 #conversion-amount::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Slabo 27px', serif;
     font-size: 1em;
 }
 
 #conversion-amount:-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Slabo 27px', serif;
     font-size: 1em;
 }
+
+input[type=number] {
+    font-family: 'Slabo 27px', serif;
+    font-size: 16px;
+    color: #173341;
+    border: 2px #173341 solid;
+    border-radius: 3.25px;
+    width: 50%;
+}
+
+/* 
+
+color 1 dark teal #173341
+color 2 gray teal #3E6170
+color 3 light gray/blue #90A99D
+color 4 light sandstone #D1DDBD
+color 5 white gray F2F2F2
+
+
+*/

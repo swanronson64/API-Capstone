@@ -19,11 +19,14 @@ $(document).ready(function () {
     function formatDropDowns() {
         $('#dropdown-1').select2({
             placeholder: 'Select a currency',
-            width: 'auto'
+            width: '75%',
+            
+            
         });
         $('#dropdown-2').select2({
             placeholder: 'Select a currency',
-            width: 'auto'
+            width: '75%',
+            
         })
     }
 
@@ -104,7 +107,7 @@ $(document).ready(function () {
         from = $("#dropdown-1 option:selected").val();
         to = $("#dropdown-2 option:selected").val();
         amount = $("#conversion-amount").val();
-        $(".conversion-results").html(`${amount} ${from}s equals ${json.result} ${to}s.`)
+        $(".conversion-results").html(`${amount} ${from} equals ${json.result} ${to}.`)
     }
 
     /**
