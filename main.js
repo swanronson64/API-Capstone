@@ -8,14 +8,16 @@ $(document).ready(function () {
         amount = 0;
 
     /**
-     * declares as variable the ajax request to access all available currencies
+     * declares the ajax request to access all available currencies
      */
     const symbolsCall = $.ajax({
         url: `${API_root}symbols?access_key=${access_key}`,
         dataType: 'json'
     });
 
-    // STYLING
+    /**
+     * applies styling rules to dropdowns
+     */
     function formatDropDowns() {
         $('#dropdown-1').select2({
             placeholder: 'Select a currency',
@@ -65,7 +67,11 @@ $(document).ready(function () {
         to = $("#dropdown-2").val();
 
         if (from == to) {
+            $(".results-box").show();
+            $(".rate-info").html('');
             $(".conversion-results").html('Please make sure that the currencies are not the same');
+            $(".conversion-results").setAttribute("aria-hidden", "false");
+            $(".rate-info").setAttribute("aria-hidden", "true");
             return false
         } else return true
     }
@@ -109,6 +115,8 @@ $(document).ready(function () {
         $(".conversion-results").html(`${json.result} ${to}`)
         $(".rate-info").html(`Current Exchange Rate: 1 ${from} = ${json.info.rate} ${to}`)
         $(".results-box").show();
+        $(".conversion-results").setAttribute("aria-hidden", "false");
+        $(".rate-info").setAttribute("aria-hidden", "false");
     }
 
     /**
