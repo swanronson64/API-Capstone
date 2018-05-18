@@ -21,7 +21,7 @@ form {
     background-color: #468966;
     border-top: .625em #468966 solid;
     border-bottom: .438 #468966 solid;
-    opacity: 0.75;
+    opacity: 0.9;
     min-height: 100px;
 }
 
@@ -57,6 +57,7 @@ form {
     margin-bottom: 5%;
     color: #8E2800;
     font-size: 120%;
+    font-weight: bold;
 }
 
 /* Sweep To Right Button Animation */
@@ -100,9 +101,7 @@ form {
     transition-timing-function: ease-out;
 }
 
-.button-convert:hover,
-.button-convert:focus,
-.button-convert:active {
+.button-convert:hover {
     color: #B64926;
 }
 
@@ -151,7 +150,7 @@ input[type=number] {
 .results-box {
     color: #FFF0A5;
     background-color: #8E2800;
-    opacity: 0.75;
+    opacity: 0.9;
     min-height: 50px;
     margin-top: .5em;
     font-size: 1.3em;

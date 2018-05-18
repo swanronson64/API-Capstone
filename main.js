@@ -3,9 +3,6 @@
 $(document).ready(function () {
     const access_key = '0b60243c6e779ce451127759d8b9c8fe';
     const API_root = 'https://data.fixer.io/api/';
-    let from = "",
-        to = "",
-        amount = 0;
 
     /**
      * declares the ajax request to access all available currencies
@@ -22,7 +19,6 @@ $(document).ready(function () {
         $('#dropdown-1').select2({
             placeholder: 'Select a currency',
             width: '75%',
-
 
         });
         $('#dropdown-2').select2({
@@ -62,16 +58,11 @@ $(document).ready(function () {
      * displays message to user if test fails
      */
 
-    function testInputs() {
-        from = $("#dropdown-1").val();
-        to = $("#dropdown-2").val();
-
-        if (from == to) {
+    function testInputs(values) {
+        if (values.from == values.to) {
             $(".results-box").show();
             $(".rate-info").html('');
             $(".conversion-results").html('Please make sure that the currencies are not the same');
-            $(".conversion-results").setAttribute("aria-hidden", "false");
-            $(".rate-info").setAttribute("aria-hidden", "true");
             return false
         } else return true
     }
@@ -80,18 +71,14 @@ $(document).ready(function () {
      * executes API call for currency exchange
      */
 
-    function convertCurrency() {
-        let trueOrFalse = testInputs();
+    function convertCurrency(values) {
+        let trueOrFalse = testInputs(values);
         if (!trueOrFalse) {
             return;
         }
 
-        from = $("#dropdown-1").val();
-        to = $("#dropdown-2").val();
-        amount = $("#conversion-amount").val();
-
         const conversionCall = $.ajax({
-            url: `${API_root}convert?access_key=${access_key}&from=${from}&to=${to}&amount=${amount}`,
+            url: `${API_root}convert?access_key=${access_key}&from=${values.from}&to=${values.to}&amount=${values.amount}`,
             dataType: 'json'
         });
 
@@ -99,24 +86,18 @@ $(document).ready(function () {
          * execute the conversion using the "convert" endpoint, and then render it
          */
         conversionCall.done(function (json) {
-            renderConversionResult(json);
+            renderConversionResult(values, json);
         });
-
 
     };
 
     /**
      * renders conversion result to user including the base currency, amount to convert, and conversion result
      */
-    function renderConversionResult(json) {
-        from = $("#dropdown-1 option:selected").val();
-        to = $("#dropdown-2 option:selected").val();
-        amount = $("#conversion-amount").val();
-        $(".conversion-results").html(`${json.result} ${to}`)
-        $(".rate-info").html(`Current Exchange Rate: 1 ${from} = ${json.info.rate} ${to}`)
+    function renderConversionResult(values, json) {
+        $(".conversion-results").html(`${json.result} ${values.to}`)
+        $(".rate-info").html(`Current Exchange Rate: 1 ${values.from} = ${json.info.rate} ${values.to}`)
         $(".results-box").show();
-        $(".conversion-results").setAttribute("aria-hidden", "false");
-        $(".rate-info").setAttribute("aria-hidden", "false");
     }
 
     /**
@@ -125,8 +106,22 @@ $(document).ready(function () {
     function handleFormSubmit(event) {
         $("#conversion-form").submit((function (event) {
             event.preventDefault();
-            convertCurrency();
+
+            //update to, from, & amount
+            const values = buildCurrencyValues();
+            convertCurrency(values);
         }));
+    }
+
+    /**
+     * Create object with updated conversion values (to, from, & amount)
+     */
+    function buildCurrencyValues() {
+        return {
+            from: $("#dropdown-1 option:selected").val(),
+            to: $("#dropdown-2 option:selected").val(),
+            amount: $("#conversion-amount").val()
+        };
     }
 
     /**

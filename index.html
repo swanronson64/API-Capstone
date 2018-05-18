@@ -25,14 +25,14 @@
             <h2 class="headings">Currency Exchange Calculator</h2>
             <div class="row conversion-box">
                 <form action="#" class="col-12" id="conversion-form">
-                    <label class="from">from
+                    <label class="from">From
                         <select class="populated-currency-list" id="dropdown-1" name="converting-from" aria-required="true" required></select>
                     </label>
-                    <label class="to">into
+                    <label class="to">&nbsp;&nbsp;To
                         <select class="populated-currency-list" id="dropdown-2" name="converting-to" aria-required="true" required></select>
                     </label>
                     <label class="amount" for="conversion-amount">Enter amount to convert
-                        <input type="number" name="amount" id="conversion-amount" placeholder="ex. 12.4, no symbols" min="0" max="10000000000000000000000000000000"
+                        <input type="number" name="amount" id="conversion-amount" placeholder="ex. 12.4, no symbols" min="0.01" max="10000000000000000000000000000000"
                             step="0.01" aria-required="true" required>
                     </label>
                     <button type="submit" role="button" class="button-convert">Convert!</button>
