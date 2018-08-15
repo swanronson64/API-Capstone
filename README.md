@@ -20,8 +20,3 @@ Using the app is simple:
 - CSS3
 - JavaScript
 - jQuery
-
-# What's Next?
-
-Lots and lots! Stay tuned.
-
