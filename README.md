@@ -1,6 +1,6 @@
 # interCashional - A Currency Exchange Calculator
 
-interCashional is a lightning fast, mobile-ready, simplistic currency exchange calculator, and the first of several web-apps coming to the interCashional traveler finance toolkit.
+interCashional is a lightning fast, mobile-ready, simplistic currency exchange calculator.
 
 # Check out the app!
 https://swanronson64.github.io/Currency_Exchange_Calculator/
